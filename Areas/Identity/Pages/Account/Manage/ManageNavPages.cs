@@ -4,7 +4,7 @@
 using System;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace  ContactManager.Areas.Identity.Pages.Account.Manage
+namespace  AuthorizationApp.Areas.Identity.Pages.Account.Manage
 {
     
     public static class ManageNavPages

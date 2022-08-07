@@ -1,9 +1,9 @@
-﻿using ContactManager.Data;
+﻿using AuthorizationApp.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace ContactManager.Pages.Contacts
+namespace AuthorizationApp.Pages.Contacts
 {
     public class DI_BasePageModel : PageModel
     {

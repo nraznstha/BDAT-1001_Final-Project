@@ -3,9 +3,9 @@
 #elif DEFAULT
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using ContactManager.Data;
+using AuthorizationApp.Data;
 using Microsoft.AspNetCore.Authorization;
-using ContactManager.Authorization;
+using AuthorizationApp.Authorization;
 
 // snippet3 used in next define
 #region snippet4  
@@ -26,12 +26,12 @@ builder.Services.AddDefaultIdentity<IdentityUser>(
 
 builder.Services.AddRazorPages();
 
-/*builder.Services.AddAuthorization(options =>
+builder.Services.AddAuthorization(options =>
 {
     options.FallbackPolicy = new AuthorizationPolicyBuilder()
         .RequireAuthenticatedUser()
         .Build();
-});*/
+});
 #endregion
 
 // Authorization handlers.
@@ -42,7 +42,7 @@ builder.Services.AddSingleton<IAuthorizationHandler,
                       ContactAdministratorsAuthorizationHandler>();
 
 builder.Services.AddSingleton<IAuthorizationHandler,
-                      ContactManagerAuthorizationHandler>();
+                      AuthorizationAppAuthorizationHandler>();
 
 var app = builder.Build();
 
@@ -88,7 +88,7 @@ app.Run();
 #region snippet3
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using ContactManager.Data;
+using AuthorizationApp.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
 

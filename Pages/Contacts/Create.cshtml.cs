@@ -1,13 +1,13 @@
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 #region snippet
-using ContactManager.Authorization;
-using ContactManager.Data;
-using ContactManager.Models;
+using AuthorizationApp.Authorization;
+using AuthorizationApp.Data;
+using AuthorizationApp.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ContactManager.Pages.Contacts
+namespace AuthorizationApp.Pages.Contacts
 {
     public class CreateModel : DI_BasePageModel
     {

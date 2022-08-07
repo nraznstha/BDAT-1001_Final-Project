@@ -1,52 +1,28 @@
-﻿using ContactManager.Authorization;
-using ContactManager.Models;
+﻿using AuthorizationApp.Authorization;
+using AuthorizationApp.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace ContactManager.Data
+namespace AuthorizationApp.Data
 {
     public static class SeedData
     {
         #region snippet_Initialize
         public static async Task Initialize(IServiceProvider serviceProvider, string testUserPw)
         {
-            #region ALTERNATIVE 1
-            using (var ctx = new ApplicationDbContext(
-                serviceProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>()))
-            {
+           
 
-                var newContact = new Contact
-                {
-                    Name = "Debra Garcia",
-                    Address = "1234 Main St",
-                    City = "Redmond",
-                    State = "WA",
-                    Zip = "10999",
-                    Email = "debra@example.com",
-                    Status = ContactStatus.Approved,
-                    //OwnerID = adminID
-                };
-                ctx.Contact.Add(newContact);
-                ctx.SaveChanges();
-                //ctx.Dispose();
-            }
-            #endregion
-
-            #region ALTERNATIVE 2
+            #region initalization 
             using (var context = new ApplicationDbContext(
                 serviceProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>()))
             {
-                // For sample purposes seed both with the same password.
-                // Password is set with the following:
-                // dotnet user-secrets set SeedUserPW <pw>
-                // The admin user can do anything
-
-                var adminID = await FindAndSaveUser(serviceProvider, testUserPw, "admin@a.com");
+              
+                var adminID = await FindAndSaveUser(serviceProvider, testUserPw, "admin@georgian.com");
                 await EnsureRole(serviceProvider, adminID, Constants.ContactAdministratorsRole);
 
                 // allowed user can create and edit contacts that they create
-                var managerID = await FindAndSaveUser(serviceProvider, testUserPw, "manager@a.com");
-                await EnsureRole(serviceProvider, managerID, Constants.ContactManagersRole);
+                var managerID = await FindAndSaveUser(serviceProvider, testUserPw, "manager@georgian.com");
+                await EnsureRole(serviceProvider, managerID, Constants.AuthorizationAppsRole);
 
                 SeedDB(context, adminID);
             }

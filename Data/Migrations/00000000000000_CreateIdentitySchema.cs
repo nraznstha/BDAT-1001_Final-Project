@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace ContactManager.Data.Migrations
+namespace AuthorizationApp.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

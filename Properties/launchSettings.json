@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "ContactManager": {
+    "AuthorizationApp": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace ContactManager.Data.Migrations
+namespace AuthorizationApp.Data.Migrations
 {
     public partial class userID_Status : Migration
     {

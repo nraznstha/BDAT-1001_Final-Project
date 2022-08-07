@@ -1,12 +1,12 @@
 ﻿using System.Threading.Tasks;
-using ContactManager.Models;
+using AuthorizationApp.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.Identity;
 
-namespace ContactManager.Authorization
+namespace AuthorizationApp.Authorization
 {
-    public class ContactManagerAuthorizationHandler :
+    public class AuthorizationAppAuthorizationHandler :
         AuthorizationHandler<OperationAuthorizationRequirement, Contact>
     {
         protected override Task
@@ -25,7 +25,7 @@ namespace ContactManager.Authorization
                 return Task.CompletedTask;
             }
 
-            if (context.User.IsInRole(Constants.ContactManagersRole))
+            if (context.User.IsInRole(Constants.AuthorizationAppsRole))
             {
                 context.Succeed(requirement);
             }

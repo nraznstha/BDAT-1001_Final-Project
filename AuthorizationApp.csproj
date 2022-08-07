@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>aspnet-ContactManager-43E19E26-0B76-411A-A0F2-6FBF429A664A</UserSecretsId>
+    <UserSecretsId>aspnet-AuthorizationApp-43E19E26-0B76-411A-A0F2-6FBF429A664A</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

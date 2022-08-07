@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using ContactManager.Models;
+using AuthorizationApp.Models;
 
-namespace ContactManager.Data;
+namespace AuthorizationApp.Data;
 
 public class ApplicationDbContext : IdentityDbContext
 {

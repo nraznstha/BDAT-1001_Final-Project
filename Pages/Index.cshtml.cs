@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace ContactManager.Pages;
+namespace AuthorizationApp.Pages;
 
 [AllowAnonymous]
 public class IndexModel : PageModel
